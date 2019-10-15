@@ -36,11 +36,13 @@ export default function App() {
   }
 
   const addTodo = () => {
-    let newTodoList = todos;
-    newTodoList.push(todo);
-    setTodo('');
-    saveTodoList(newTodoList);
-    setTodos(newTodoList);
+    if (todo) {
+      let newTodoList = todos;
+      newTodoList.push(todo);
+      setTodo('');
+      saveTodoList(newTodoList);
+      setTodos(newTodoList);
+    }
   };
 
   const saveTodoList = async todoList => {
